@@ -87,16 +87,18 @@
             transition: all 0.3s ease; /* Weicher Übergang für Effekte */
             border-radius: 0px; /* Eckige Boxen */
             position: relative; /* Positionierung für den Farbübergang */
-            padding-top: 30px; /* Abstand für das Icon */
+            padding-top: 30px; /* Abstand für den Überschrift */
         }
 
-        .box-icon {
-            font-size: 60px; /* Größe des Icons */
-            margin-bottom: 40px; /* Abstand zwischen Icon und Text */
+        /* Überschrift in den Boxen */
+        .box-header {
+            font-size: 24px; /* Größe der Überschrift */
+            font-weight: bold; /* Fett schreiben */
+            margin-bottom: 10px; /* Abstand zwischen Überschrift und Text */
         }
 
         .box-text {
-            text-align: center; /* Text zentrieren */
+            font-size: 18px; /* Größe des Textes */
         }
 
         /* Hover-Effekt für die Boxen */
@@ -122,28 +124,16 @@
         <!-- Boxen hinzufügen -->
         <div class="box-container">
             <div class="box">
-                <div class="box-icon">
-                    <i class="material-icons">directions_car</i>
-                </div>
-                <div class="box-text">
-                    Gute Performance
-                </div>
+                <div class="box-header">Gute Performance</div>
+                <p class="box-text">Mit unseren Fahrzeugen kannst du deine Fahrtgeschwindigkeit steigern und einzigartige Rennwagen ausprobieren.</p>
             </div>
             <div class="box">
-                <div class="box-icon">
-                    <i class="material-icons">attach_money</i>
-                </div>
-                <div class="box-text">
-                    Kein Echtgeld
-                </div>
+                <div class="box-header">Kein Echtgeld</div>
+                <p class="box-text">In unserer Community musst du keine Echtgeld ausgeben, um an Spielen teilzunehmen. Unsere Spiele sind komplett kostenlos.</p>
             </div>
             <div class="box">
-                <div class="box-icon">
-                    <i class="material-icons">build</i>
-                </div>
-                <div class="box-text">
-                    Custom Scripts
-                </div>
+                <div class="box-header">Custom Scripts</div>
+                <p class="box-text">Wir bieten eine Vielzahl von Custom Scripts an, um deine Erfahrung noch interessanter zu machen. Ob es um Fahrtroutine, Fahrzeuganpassung oder noch mehr geht, das ist bei uns alles möglich.</p>
             </div>
         </div>
     </div>
