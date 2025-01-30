@@ -40,7 +40,7 @@
             left: 0;
             width: 100%;
             height: 100vh; /* Höhe an den Viewport anpassen */
-            background-color: rgba(0, 0, 0, 0.5); /* Schwarz mit 50% Transparenz */
+            background-color: rgba(0, 0, 0, 0.8); /* Schwarz mit 80% Transparenz */
             z-index: 1; /* Sicherstellen, dass die Überlagerung unter dem Banner, aber über dem Bild liegt */
         }
 
@@ -53,39 +53,17 @@
             padding-top: 70px; /* Erhöhtes Padding oben, um den Text weiter nach unten zu schieben */
         }
 
-        /* Logo im Banner */
-        .logo {
-            height: 150px; /* Höhe des Logos im Banner */
-            width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
-            margin-left: 600px; /* Abstand zwischen dem Logo und dem linken Rand des Banners */
-            transition: height 0.3s; /* Übergang für die Größe des Logos */
-        }
-
-        /* Großes Logo über dem Text */
-        .large-logo {
-            height: 500px; /* Höhe des großen Logos */
-            width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
-            margin-bottom: 20px; /* Abstand zwischen dem Logo und dem Text */
-        }
-
-        /* Container für die Boxen */
-        .box-container {
-            display: flex; /* Flexbox für die Anordnung der Boxen */
-            justify-content: center; /* Zentriert die Boxen horizontal */
-            margin-top: 20px; /* Abstand über den Boxen */
-        }
-
-        /* Stil für die Boxen */
+        /* Boxen */
         .box {
             width: 300px; /* Breite der Box */
             height: 250px; /* Höhe der Box */
-            background-color: #666; /* Dunkler grauer Hintergrund */
+            background-color: #333; /* Dunkler grauer Hintergrund */
             color: white; /* Textfarbe */
             display: flex; /* Flexbox für Textzentrierung */
             flex-direction: column; /* Anordnen des Inhalts in einer Spalte */
             align-items: center; /* Horizontale Zentrierung */
             justify-content: center; /* Vertikale Zentrierung */
-            margin: 0 15px; /* Abstand zwischen den Boxen */
+            margin: 20px; /* Abstand zwischen den Boxen */
             transition: all 0.3s ease; /* Weicher Übergang für Effekte */
             border-radius: 10px; /* Runder Rahmen */
             position: relative; /* Positionierung für den Farbübergang */
@@ -108,8 +86,7 @@
 
         /* Hover-Effekt für die Boxen */
         .box:hover {
-            background: linear-gradient(to left, #eb10eb, #05b3fa); /* Farbverlauf von sanftem Pink zu sanftem Blau */
-            transform: translateY(-5px); /* Leichtes Anheben der Box */
+            background-color: #444; /* DUNKLERER HINTERGRUND FÜR DIE BOXEN BEIM HOVER-EFFEKT */
         }
     </style>
 </head>
@@ -154,9 +131,99 @@
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 banner.style.height = "40px"; // Höhe des Banners beim Scrollen anpassen
                 logo.style.height = "100px"; // Höhe des Logos beim Scrollen anpassen
+                document.body.style.overflow = "auto"; // Scrollbar aktivieren
+                document.body.style.position = "relative"; // Scrollbar fixieren
+                document.body.style.top = "-40px"; // Scrollbar fixieren
+                document.body.style.paddingTop = "40px"; // Scrollbar fixieren
+                document.body.style.marginTop = "40px"; // Scrollbar fixieren
+                document.body.style.height = "calc(100vh - 40px)"; // Scrollbar fixieren
+                document.body.style.maxHeight = "calc(100vh - 40px)"; // Scrollbar fixieren
+                banner.style.top = "20px"; // Scrollbar fixieren
+                banner.style.paddingTop = "0px"; // Scrollbar fixieren
+                banner.style.paddingBottom = "0px"; // Scrollbar fixieren
+                banner.style.height = "60px"; // Scrollbar fixieren
+                setTimeout(function() {
+                    document.body.style.overflow = "hidden"; // Scrollbar deaktivieren
+                    document.body.style.top = "0px"; // Scrollbar deaktivieren
+                    document.body.style.paddingTop = "0px"; // Scrollbar deaktivieren
+                    document.body.style.marginTop = "0px"; // Scrollbar deaktivieren
+                    document.body.style.height = "100vh"; // Scrollbar deaktivieren
+                    document.body.style.maxHeight = "100vh"; // Scrollbar deaktivieren
+                    banner.style.top = "0px"; // Scrollbar deaktivieren
+                    banner.style.paddingTop = "20px"; // Scrollbar deaktivieren
+                    banner.style.paddingBottom = "20px"; // Scrollbar deaktivieren
+                    banner.style.height = "60px"; // Scrollbar deaktivieren
+                }, 300); // Scrollbar deaktivieren nach 300ms 
+                setTimeout(function() {
+                    document.body.style.position = ""; // Normaler Wert für position setzen
+                    document.body.style.top = ""; // Normaler Wert für top setzen
+                    document.body.style.paddingTop = ""; // Normaler Wert für paddingTop setzen
+                    document.body.style.marginTop = ""; // Normaler Wert für marginTop setzen
+                    document.body.style.height = ""; // Normaler Wert für height setzen
+                    document.body.style.maxHeight = ""; // Normaler Wert für maxHeight setzen
+                    document.body.style.overflow = ""; // Normaler Wert für overflow setzen
+                    banner.style.top = ""; // Normaler Wert für top setzen
+                    banner.style.paddingTop = ""; // Normaler Wert für paddingTop setzen
+                    banner.style.paddingBottom = ""; // Normaler Wert für paddingBottom setzen
+                    banner.style.height = ""; // Normaler Wert für height setzen
+                }, 600); // Normaler Wert nach 600ms setzen 
             } else {
                 banner.style.height = "60px"; // Höhe des Banners zurücksetzen
                 logo.style.height = "150px"; // Höhe des Logos zurücksetzen
+                setTimeout(function() {
+                    document.body.style.overflowY = "auto"; // Scrollbar zurücksetzen 
+                }, 300);
+                setTimeout(function() {
+                    document.body.style.overflowY = ""; // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    document.body.scrollY = ""; // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollY = ""; // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    banner.scrollY = ""; // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    banner.scrollY = ""; // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    document.body.scrollY = ""; // Normaler Wert zurücksetzen 
+                }, 600);
+                setTimeout(function() {
+                    window.scrollY = ""; // Normaler Wert zurücksetzen 
+                }, 600);
             }
         };
     </script>
