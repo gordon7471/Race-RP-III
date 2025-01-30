@@ -39,7 +39,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh; /* Höhe an den Viewport anpassen */
             background-color: rgba(0, 0, 0, 0.5); /* Schwarz mit 50% Transparenz */
             z-index: 1; /* Sicherstellen, dass die Überlagerung unter dem Banner, aber über dem Bild liegt */
         }
@@ -111,21 +111,6 @@
             background: linear-gradient(to left, #eb10eb, #05b3fa); /* Farbverlauf von sanftem Pink zu sanftem Blau */
             transform: translateY(-5px); /* Leichtes Anheben der Box */
         }
-
-        /* Verkleinerung des Logos beim Scrollen */
-        @keyframes shrink {
-            0% {
-                height: 150px;
-            }
-            100% {
-                height: 100px; /* Höhe des Logos beim Scrollen */
-            }
-        }
-
-        /* Logo beim Scrollen verkleinern */
-        .banner.scrolled .logo {
-            animation: shrink 0.3s forwards; /* Animation anwenden */
-        }
     </style>
 </head>
 <body>
@@ -164,11 +149,14 @@
     <script>
         // Skript zum Hinzufügen der "scrolled" Klasse zum Banner beim Scrollen
         window.onscroll = function() {
+            const logo = document.querySelector('.logo');
             const banner = document.querySelector('.banner');
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                banner.classList.add("scrolled");
+                banner.style.height = "40px"; // Höhe des Banners beim Scrollen anpassen
+                logo.style.height = "100px"; // Höhe des Logos beim Scrollen anpassen
             } else {
-                banner.classList.remove("scrolled");
+                banner.style.height = "60px"; // Höhe des Banners zurücksetzen
+                logo.style.height = "150px"; // Höhe des Logos zurücksetzen
             }
         };
     </script>
