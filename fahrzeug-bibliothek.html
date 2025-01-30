@@ -37,6 +37,11 @@
             text-align: center;
         }
 
+        .logo {
+            height: 40px; /* Höhe des kleinen Logos */
+            margin-right: 10px; /* Abstand zwischen Logo und Button */
+        }
+
         .box {
             width: 300px;
             background-color: #222;
@@ -46,6 +51,14 @@
             border-radius: 0;
             padding: 10px;
             cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease; /* Übergang für Animationen */
+        }
+
+        /* Hover-Effekt für Boxen */
+        .box:hover {
+            transform: translateY(-10px); /* Anheben der Box */
+            background: linear-gradient(45deg, pink, blue); /* Sanfter Farbverlauf */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Schatten hinzufügen */
         }
 
         .vehicle-list {
@@ -59,6 +72,7 @@
 </head>
 <body>
     <div class="banner">
+        <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Kleines Logo" class="logo">
         <a href="index.html" class="btn">Zurück zur Startseite</a>
     </div>
     <div class="content">
@@ -67,27 +81,45 @@
         <div class="box" onclick="toggleVehicles(this)">
             <div class="box-header">Sportautos</div>
             <div class="vehicle-list">
-                <p>Auto 1</p>
-                <p>Auto 2</p>
-                <p>Auto 3</p>
+                <div class="box">
+                    <div class="box-header">Auto 1</div>
+                </div>
+                <div class="box">
+                    <div class="box-header">Auto 2</div>
+                </div>
+                <div class="box">
+                    <div class="box-header">Auto 3</div>
+                </div>
             </div>
         </div>
 
         <div class="box" onclick="toggleVehicles(this)">
             <div class="box-header">Supersportwagen</div>
             <div class="vehicle-list">
-                <p>Auto 4</p>
-                <p>Auto 5</p>
-                <p>Auto 6</p>
+                <div class="box">
+                    <div class="box-header">Auto 4</div>
+                </div>
+                <div class="box">
+                    <div class="box-header">Auto 5</div>
+                </div>
+                <div class="box">
+                    <div class="box-header">Auto 6</div>
+                </div>
             </div>
         </div>
 
         <div class="box" onclick="toggleVehicles(this)">
             <div class="box-header">Lkw</div>
             <div class="vehicle-list">
-                <p>Auto 7</p>
-                <p>Auto 8</p>
-                <p>Auto 9</p>
+                <div class="box">
+                    <div class="box-header">Auto 7</div>
+                </div>
+                <div class="box">
+                    <div class="box-header">Auto 8</div>
+                </div>
+                <div class="box">
+                    <div class="box-header">Auto 9</div>
+                </div>
             </div>
         </div>
     </div>
