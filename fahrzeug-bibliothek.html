@@ -38,8 +38,8 @@
         }
 
         .banner-logo {
-            height: 80px; /* Großeres Logo */
-            margin-left: 20px; /* Abstand zwischen Button und Logo */
+            height: 100px; /* Großeres Logo */
+            margin-left: 30px; /* Abstand zwischen Button und Logo */
         }
 
         .box {
@@ -66,10 +66,6 @@
         .vehicle-list {
             display: none; /* Standardmäßig ausgeblendet */
             margin-top: 10px; /* Abstand zwischen Überschrift und Fahrzeugliste */
-        }
-
-        .active .vehicle-list {
-            display: block; /* Sichtbar, wenn die Box aktiv ist */
         }
 
         .vehicle {
@@ -124,10 +120,15 @@
 
     <script>
         function toggleVehicles(box) {
-            // Klappen Sie nur die angeklickte Box ein oder aus
+            // Alle Fahrzeuglisten schließen
+            const allVehicleLists = document.querySelectorAll('.vehicle-list');
+            allVehicleLists.forEach(list => {
+                list.style.display = 'none';
+            });
+
+            // Fahrzeugliste der angeklickten Box umschalten
             const vehicleList = box.querySelector('.vehicle-list');
-            const isVisible = vehicleList.style.display === 'block'; // Überprüfen, ob die Liste sichtbar ist
-            vehicleList.style.display = isVisible ? 'none' : 'block'; // Umschalten der Sichtbarkeit 
+            vehicleList.style.display = vehicleList.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
