@@ -15,6 +15,7 @@
             background-repeat: no-repeat; /* Bild wird nicht wiederholt */
             background-attachment: fixed; /* Hintergrund bleibt statisch beim Scrollen */
             position: relative; /* Positionierung für den Overlay */
+            overflow: hidden; /* Verhindert Scrollen während des Überlagerungsabschnitts */
         }
 
         /* Banner oben */
@@ -51,18 +52,45 @@
             padding-top: 10%; /* Erhöhtes Padding oben, um den Text weiter nach unten zu schieben */
         }
 
-      /* Logo im Banner */
+        /* Logo im Banner */
         .logo {
-           height: 150px; /* Höhe des Logos im Banner */
-           width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
-           margin-left: 600px; /* Abstand zwischen dem Logo und dem linken Rand des Banners */
+            height: 150px; /* Höhe des Logos im Banner */
+            width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
+            margin-left: 600px; /* Abstand zwischen dem Logo und dem linken Rand des Banners */
         }
 
         /* Großes Logo über dem Text */
         .large-logo {
-            height: 500px; /* Reduzierte Höhe des großen Logos */
+            height: 500px; /* Höhe des großen Logos */
             width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
             margin-bottom: 20px; /* Abstand zwischen dem Logo und dem Text */
+        }
+
+        /* Container für die Boxen */
+        .box-container {
+            display: flex; /* Flexbox für die Anordnung der Boxen */
+            justify-content: center; /* Zentriert die Boxen horizontal */
+            margin-top: 20px; /* Abstand über den Boxen */
+        }
+
+        /* Stil für die Boxen */
+        .box {
+            width: 200px; /* Breite der Box */
+            height: 150px; /* Höhe der Box */
+            background-color: rgba(128, 128, 128, 0.8); /* Grauer Hintergrund */
+            color: white; /* Textfarbe */
+            display: flex; /* Flexbox für Textzentrierung */
+            align-items: center; /* Vertikale Zentrierung */
+            justify-content: center; /* Horizontale Zentrierung */
+            margin: 0 10px; /* Abstand zwischen den Boxen */
+            transition: all 0.3s ease; /* Weicher Übergang für Effekte */
+            border-radius: 10px; /* Abgerundete Ecken */
+        }
+
+        /* Hover-Effekt für die Boxen */
+        .box:hover {
+            background-color: rgba(100, 149, 237, 0.8); /* Weicher Blauton beim Hover */
+            transform: translateY(-5px); /* Leichtes Anheben der Box */
         }
     </style>
 </head>
@@ -78,6 +106,13 @@
         <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Großes Logo" class="large-logo">
         <h1>JETZT TEIL DER ROLEPLAY COMMUNITY VON RACE RP WERDEN</h1>
         <p>COMMING SOON</p>
+
+        <!-- Boxen hinzufügen -->
+        <div class="box-container">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
     </div>
 </body>
 </html>
