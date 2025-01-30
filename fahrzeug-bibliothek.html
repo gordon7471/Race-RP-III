@@ -41,24 +41,25 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            margin-left: auto; /* Positioniert das Banner-Logo */
         }
 
         .banner-logo {
             height: 80px; /* Großeres Logo */
-            margin-right: 20px; /* Abstand zwischen Logo und Button */
+            margin-left: 20px; /* Abstand zwischen Button und Logo */
         }
 
         .box {
-            width: calc(300px + 20px); /* Breite der Boxen plus Paddings */
             background-color: #222;
             color: white;
             margin: 20px;
             border: 2px solid #444;
-            border-radius: 0;
+            border-radius: 5px;
             padding: 10px;
             cursor: pointer;
-            display: flex;
-            justify-content: center;
+            display: inline-block; /* Boxen nebeneinander */
+            text-align: left;
+            width: 280px; /* Feste Breite für Boxen */
             transition: transform 0.3s ease, background 0.3s ease; /* Übergang für Animationen */
         }
 
@@ -70,7 +71,23 @@
         }
 
         .vehicle-list {
-            text-align: center; /* Text im Mittelpunkt */
+            display: none; /* Standardmäßig ausgeblendet */
+            margin-top: 10px; /* Abstand zwischen Überschrift und Fahrzeugliste */
+        }
+
+        .box.active .vehicle-list {
+            display: block; /* Sichtbar, wenn die Box aktiv ist */
+        }
+
+        .vehicle {
+            margin: 5px 0; /* Abstand zwischen Fahrzeugen */
+        }
+
+        /* Flexbox für zur mittigen Anordnung der Boxen */
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Zentriert alle Boxen */
         }
     </style>
 </head>
@@ -82,47 +99,31 @@
     <div class="content">
         <h1>Fahrzeugbibliothek</h1>
 
-        <div class="box" onclick="toggleVehicles(this)">
-            <div class="box-header">Sportautos</div>
-            <div class="vehicle-list">
-                <div class="box">
-                    <div class="box-header">Auto 1</div>
-                </div>
-                <div class="box">
-                    <div class="box-header">Auto 2</div>
-                </div>
-                <div class="box">
-                    <div class="box-header">Auto 3</div>
+        <div class="box-container">
+            <div class="box" onclick="toggleVehicles(this)">
+                <div class="box-header">Sportautos</div>
+                <div class="vehicle-list">
+                    <div class="vehicle">Porsche 911</div>
+                    <div class="vehicle">Ferrari F8</div>
+                    <div class="vehicle">Lamborghini Huracán</div>
                 </div>
             </div>
-        </div>
 
-        <div class="box" onclick="toggleVehicles(this)">
-            <div class="box-header">Supersportwagen</div>
-            <div class="vehicle-list">
-                <div class="box">
-                    <div class="box-header">Auto 4</div>
-                </div>
-                <div class="box">
-                    <div class="box-header">Auto 5</div>
-                </div>
-                <div class="box">
-                    <div class="box-header">Auto 6</div>
+            <div class="box" onclick="toggleVehicles(this)">
+                <div class="box-header">Supersportwagen</div>
+                <div class="vehicle-list">
+                    <div class="vehicle">Bugatti Chiron</div>
+                    <div class="vehicle">McLaren P1</div>
+                    <div class="vehicle">Koenigsegg Agera RS</div>
                 </div>
             </div>
-        </div>
 
-        <div class="box" onclick="toggleVehicles(this)">
-            <div class="box-header">Lkw</div>
-            <div class="vehicle-list">
-                <div class="box">
-                    <div class="box-header">Auto 7</div>
-                </div>
-                <div class="box">
-                    <div class="box-header">Auto 8</div>
-                </div>
-                <div class="box">
-                    <div class="box-header">Auto 9</div>
+            <div class="box" onclick="toggleVehicles(this)">
+                <div class="box-header">Lkw</div>
+                <div class="vehicle-list">
+                    <div class="vehicle">Mercedes-Benz Actros</div>
+                    <div class="vehicle">MAN TGX</div>
+                    <div class="vehicle">Scania R-Serie</div>
                 </div>
             </div>
         </div>
