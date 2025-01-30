@@ -42,6 +42,12 @@
             margin-left: 20px; /* Abstand zwischen Button und Logo */
         }
 
+        /* Box-Style für alle Boxen */
+        .box-container {
+            max-width: 800px; /* Maximale Breite für Boxen */
+            margin-left: auto; /* Zentrierung */
+            margin-right: auto; /* Zentrierung */
+        }
         .box {
             background-color: #222;
             color: white;
@@ -55,42 +61,38 @@
             width: 280px; /* Feste Breite für Boxen */
             transition: transform 0.3s ease, background 0.3s ease; /* Übergang für Animationen */
         }
-
-        /* Hover-Effekt für Boxen */
         .box:hover {
             transform: translateY(-10px); /* Anheben der Box */
             background: linear-gradient(45deg, pink, blue); /* Sanfter Farbverlauf */
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Schatten hinzufügen */
         }
-
+        /* Box-Style für Vehicle-Boxen */
         .vehicle-list {
             display: none; /* Standardmäßig ausgeblendet */
             margin-top: 10px; /* Abstand zwischen Überschrift und Fahrzeugliste */
         }
-
         .vehicle {
             margin: 5px 0; /* Abstand zwischen Fahrzeugen */
         }
-
-        /* Flexbox für zur mittigen Anordnung der Boxen */
-        .box-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Zentriert alle Boxen */
-        }
-
-        /* Neue Box für "Was haben wir noch zu bieten" */
+        /* Box-Style für die Box "Was haben wir noch zu bieten" */
         .offer-box {
-            background-color: #444; /* Dunkelgrauer Hintergrund */
+            background-color: #222;
+            color: white;
             margin: 20px;
-            border: 2px solid #666; /* Hellere Umrandung */
+            border: 2px solid #444;
             border-radius: 5px;
-            padding: 20px; /* Innenabstand */
-            text-align: left; /* Text linksbündig */
-            width: 90%; /* Breite der Box */
-            max-width: 800px; /* Maximale Breite */
-            margin-left: auto; /* Zentrierung */
-            margin-right: auto; /* Zentrierung */
+            padding: 20px;
+            text-align: left;
+            width: 90%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease, background 0.3s ease; /* Übergang für Animationen */
+        }
+        .offer-box:hover {
+            transform: translateY(-10px); /* Anheben der Box */
+            background: linear-gradient(45deg, pink, blue); /* Sanfter Farbverlauf */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Schatten hinzufügen */
         }
     </style>
 </head>
@@ -131,15 +133,17 @@
             </div>
         </div>
 
-        <!-- Neue Box hier -->
-        <div class="offer-box">
-            <h2>Was haben wir noch zu bieten</h2>
-            <p>
-                Neben einer breiten Auswahl an Fahrzeugen bieten wir auch erstklassige Dienstleistungen an, 
-                darunter Fahrzeugverleih, Wartung und Reparaturen. Unser Team von Experten steht Ihnen zur Seite, 
-                um Ihnen bei allen Ihren Automobilbedürfnissen zu helfen. 
-                Besuchen Sie uns und entdecken Sie die Möglichkeiten!
-            </p>
+        <!-- Box "Was haben wir noch zu bieten" hier -->
+        <div class="box-container">
+            <div class="offer-box">
+                <h2>Was haben wir noch zu bieten</h2>
+                <p>
+                    Neben einer breiten Auswahl an Fahrzeugen bieten wir auch erstklassige Dienstleistungen an, 
+                    darunter Fahrzeugverleih, Wartung und Reparaturen. Unser Team von Experten steht Ihnen zur Seite, 
+                    um Ihnen bei allen Ihren Automobilbedürfnissen zu helfen. 
+                    Besuchen Sie uns und entdecken Sie die Möglichkeiten!
+                </p>
+            </div>
         </div>
     </div>
 
