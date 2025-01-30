@@ -15,7 +15,8 @@
             background-position: center; /* Bild wird zentriert */
             background-repeat: no-repeat; /* Bild wird nicht wiederholt */
             background-attachment: fixed; /* Hintergrund bleibt statisch beim Scrollen */
-            position: relative; /* Position für den Overlay */
+            position: relative;
+            overflow: auto; /* Scrollen aktivieren */
         }
 
         /* Banner oben */
@@ -30,7 +31,7 @@
             left: 0; /* Links anordnen */
             width: 100%; /* Breite 100% des Viewports */
             z-index: 3; /* Sicherstellen, dass der Banner über dem Bild liegt */
-            transition: height 0.3s, padding 0.3s; /* Übergang für Größe und Padding */
+            transition: height 0.3s; /* Übergang für Größe */
         }
 
         /* Überlagerung */
@@ -40,7 +41,7 @@
             left: 0;
             width: 100%;
             height: 100vh; /* Höhe an den Viewport anpassen */
-            background-color: rgba(0, 0, 0, 0.8); /* Schwarz mit 80% Transparenz */
+            background-color: rgba(0, 0, 0, 0.5); /* Schwarz mit 50% Transparenz */
             z-index: 1; /* Sicherstellen, dass die Überlagerung unter dem Banner, aber über dem Bild liegt */
         }
 
@@ -51,23 +52,38 @@
             color: white; /* Textfarbe */
             text-align: center; /* Zentrierter Text */
             padding-top: 70px; /* Erhöhtes Padding oben, um den Text weiter nach unten zu schieben */
+            padding-bottom: 1000px; /* Fügt zusätzlichen Abstand unten hinzu für das Scrollen */
+        }
+
+        /* Großes Logo über dem Text */
+        .large-logo {
+            height: 500px; /* Höhe des großen Logos */
+            width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
+            margin-bottom: 20px; /* Abstand zwischen dem Logo und dem Text */
+        }
+
+        /* Boxen Container */
+        .box-container {
+            display: flex;
+            justify-content: center; /* Zentriert die Boxen horizontal */
+            flex-wrap: wrap; /* Erlaubt das Wrapping */
         }
 
         /* Boxen */
         .box {
             width: 300px; /* Breite der Box */
             height: 250px; /* Höhe der Box */
-            background-color: #333; /* Dunkler grauer Hintergrund */
+            background-color: #444; /* Dunkler grauer Hintergrund */
             color: white; /* Textfarbe */
             display: flex; /* Flexbox für Textzentrierung */
             flex-direction: column; /* Anordnen des Inhalts in einer Spalte */
             align-items: center; /* Horizontale Zentrierung */
             justify-content: center; /* Vertikale Zentrierung */
             margin: 20px; /* Abstand zwischen den Boxen */
-            transition: all 0.3s ease; /* Weicher Übergang für Effekte */
+            transition: background-color 0.3s ease; /* Weicher Übergang für Effekte */
             border-radius: 10px; /* Runder Rahmen */
             position: relative; /* Positionierung für den Farbübergang */
-            padding-top: 50px; /* Abstand für das Icon und die Überschrift */
+            padding-top: 20px; /* Abstand für das Icon und die Überschrift */
         }
 
         .box-icon {
@@ -86,19 +102,18 @@
 
         /* Hover-Effekt für die Boxen */
         .box:hover {
-            background-color: #444; /* DUNKLERER HINTERGRUND FÜR DIE BOXEN BEIM HOVER-EFFEKT */
+            background-color: #555; /* Dunklerer Hintergrund beim Hover-Effekt */
         }
     </style>
 </head>
 <body>
     <div class="banner">
         <a href="https://github.com/gordon7471/Race-RP-III">
-            <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Logo" class="logo">
+            <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Logo" class="logo" style="height: 150px;">
         </a>
     </div>
     <div class="overlay"></div>
     <div class="content">
-        <!-- Großes Logo über dem Text -->
         <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Großes Logo" class="large-logo">
         <h1>JETZT TEIL DER ROLEPLAY COMMUNITY VON RACE RP WERDEN</h1>
         <p>COMMING SOON</p>
@@ -131,99 +146,9 @@
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 banner.style.height = "40px"; // Höhe des Banners beim Scrollen anpassen
                 logo.style.height = "100px"; // Höhe des Logos beim Scrollen anpassen
-                document.body.style.overflow = "auto"; // Scrollbar aktivieren
-                document.body.style.position = "relative"; // Scrollbar fixieren
-                document.body.style.top = "-40px"; // Scrollbar fixieren
-                document.body.style.paddingTop = "40px"; // Scrollbar fixieren
-                document.body.style.marginTop = "40px"; // Scrollbar fixieren
-                document.body.style.height = "calc(100vh - 40px)"; // Scrollbar fixieren
-                document.body.style.maxHeight = "calc(100vh - 40px)"; // Scrollbar fixieren
-                banner.style.top = "20px"; // Scrollbar fixieren
-                banner.style.paddingTop = "0px"; // Scrollbar fixieren
-                banner.style.paddingBottom = "0px"; // Scrollbar fixieren
-                banner.style.height = "60px"; // Scrollbar fixieren
-                setTimeout(function() {
-                    document.body.style.overflow = "hidden"; // Scrollbar deaktivieren
-                    document.body.style.top = "0px"; // Scrollbar deaktivieren
-                    document.body.style.paddingTop = "0px"; // Scrollbar deaktivieren
-                    document.body.style.marginTop = "0px"; // Scrollbar deaktivieren
-                    document.body.style.height = "100vh"; // Scrollbar deaktivieren
-                    document.body.style.maxHeight = "100vh"; // Scrollbar deaktivieren
-                    banner.style.top = "0px"; // Scrollbar deaktivieren
-                    banner.style.paddingTop = "20px"; // Scrollbar deaktivieren
-                    banner.style.paddingBottom = "20px"; // Scrollbar deaktivieren
-                    banner.style.height = "60px"; // Scrollbar deaktivieren
-                }, 300); // Scrollbar deaktivieren nach 300ms 
-                setTimeout(function() {
-                    document.body.style.position = ""; // Normaler Wert für position setzen
-                    document.body.style.top = ""; // Normaler Wert für top setzen
-                    document.body.style.paddingTop = ""; // Normaler Wert für paddingTop setzen
-                    document.body.style.marginTop = ""; // Normaler Wert für marginTop setzen
-                    document.body.style.height = ""; // Normaler Wert für height setzen
-                    document.body.style.maxHeight = ""; // Normaler Wert für maxHeight setzen
-                    document.body.style.overflow = ""; // Normaler Wert für overflow setzen
-                    banner.style.top = ""; // Normaler Wert für top setzen
-                    banner.style.paddingTop = ""; // Normaler Wert für paddingTop setzen
-                    banner.style.paddingBottom = ""; // Normaler Wert für paddingBottom setzen
-                    banner.style.height = ""; // Normaler Wert für height setzen
-                }, 600); // Normaler Wert nach 600ms setzen 
             } else {
                 banner.style.height = "60px"; // Höhe des Banners zurücksetzen
                 logo.style.height = "150px"; // Höhe des Logos zurücksetzen
-                setTimeout(function() {
-                    document.body.style.overflowY = "auto"; // Scrollbar zurücksetzen 
-                }, 300);
-                setTimeout(function() {
-                    document.body.style.overflowY = ""; // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    document.body.scrollY = ""; // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollY = ""; // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    banner.scrollY = ""; // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollTo(0, window.scrollY); // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    banner.scrollY = ""; // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    document.body.scrollY = ""; // Normaler Wert zurücksetzen 
-                }, 600);
-                setTimeout(function() {
-                    window.scrollY = ""; // Normaler Wert zurücksetzen 
-                }, 600);
             }
         };
     </script>
