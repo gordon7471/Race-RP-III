@@ -70,23 +70,23 @@
         /* Boxen */
         .box {
             width: 300px; /* Breite der Box */
-            height: 250px; /* Höhe der Box */
-            background-color: #444; /* Dunkler grauer Hintergrund */
+            background-color: #222; /* Dunklerer Hintergrund */
             color: white; /* Textfarbe */
             display: flex; /* Flexbox für Textzentrierung */
             flex-direction: column; /* Anordnen des Inhalts in einer Spalte */
             align-items: center; /* Horizontale Zentrierung */
             justify-content: center; /* Vertikale Zentrierung */
             margin: 20px; /* Abstand zwischen den Boxen */
-            transition: transform 0.3s ease, background 0.3s ease; /* Sanfte Übergänge */
-            border-radius: 10px; /* Runder Rahmen */
+            transition: transform 0.3s ease; /* Sanfter Übergang */
+            border: 2px solid #444; /* Eckigen Rand */
+            border-radius: 0; /* Keine abgerundeten Ecken */
             overflow: hidden; /* Für den Verlaufseffekt */
+            padding: 10px; /* Innerer Abstand */
         }
 
-        /* Farbverlauf beim Hover */
+        /* Hover-Effekt für Boxen */
         .box:hover {
             transform: translateY(-10px); /* Anheben der Box */
-            background: linear-gradient(135deg, pink, blue); /* Farbverlauf */
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Schatten hinzufügen */
         }
 
@@ -103,6 +103,30 @@
         .box-text {
             font-size: 18px; /* Größe des Textes */
         }
+
+        /* Button für Fahrzeugbibliothek */
+        .btn {
+            background-color: #444; /* Hintergrundfarbe des Buttons */
+            color: white; /* Textfarbe */
+            padding: 10px 20px; /* Innerer Abstand */
+            border-radius: 5px; /* Abgerundete Ecken */
+            text-decoration: none; /* Unterstreichen entfernen */
+            margin-left: 20px; /* Abstand vom Logo */
+            transition: background-color 0.3s; /* Sanfter Übergang */
+        }
+
+        .btn:hover {
+            background-color: #666; /* Hintergrundfarbe beim Hover */
+        }
+
+        /* Fahrzeugkategorie-Boxen */
+        .vehicle-list {
+            display: none; /* Standardmäßig ausgeblendet */
+        }
+
+        .box.active .vehicle-list {
+            display: block; /* Sichtbar, wenn die Box aktiv ist */
+        }
     </style>
 </head>
 <body>
@@ -111,6 +135,7 @@
         <a href="https://github.com/gordon7471/Race-RP-III">
             <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Logo" class="logo" style="height: 150px;">
         </a>
+        <a href="fahrzeug-bibliothek.html" class="btn">Fahrzeugbibliothek</a> <!-- Button zur Fahrzeugbibliothek -->
     </div>
     <div class="content">
         <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Großes Logo" class="large-logo">
@@ -119,20 +144,35 @@
 
         <!-- Boxen hinzufügen -->
         <div class="box-container">
-            <div class="box">
+            <div class="box" onclick="toggleVehicles(this)">
                 <div class="box-icon"><i class="material-icons">directions_car</i></div>
                 <div class="box-header">Gute Performance</div>
                 <p class="box-text">Mit unseren Fahrzeugen kannst du deine Fahrtgeschwindigkeit steigern und einzigartige Rennwagen ausprobieren.</p>
+                <div class="vehicle-list">
+                    <p>Fahrzeug 1</p>
+                    <p>Fahrzeug 2</p>
+                    <p>Fahrzeug 3</p>
+                </div>
             </div>
-            <div class="box">
+            <div class="box" onclick="toggleVehicles(this)">
                 <div class="box-icon"><i class="material-icons">attach_money</i></div>
                 <div class="box-header">Kein Echtgeld</div>
                 <p class="box-text">In unserer Community musst du keine Echtgeld ausgeben, um an Spielen teilzunehmen. Unsere Spiele sind komplett kostenlos.</p>
+                <div class="vehicle-list">
+                    <p>Fahrzeug 4</p>
+                    <p>Fahrzeug 5</p>
+                    <p>Fahrzeug 6</p>
+                </div>
             </div>
-            <div class="box">
+            <div class="box" onclick="toggleVehicles(this)">
                 <div class="box-icon"><i class="material-icons">build</i></div>
                 <div class="box-header">Custom Scripts</div>
                 <p class="box-text">Wir bieten eine Vielzahl von Custom Scripts an, um deine Erfahrung noch interessanter zu machen. Ob es um Fahrtroutine, Fahrzeuganpassung oder noch mehr geht, das ist bei uns alles möglich.</p>
+                <div class="vehicle-list">
+                    <p>Fahrzeug 7</p>
+                    <p>Fahrzeug 8</p>
+                    <p>Fahrzeug 9</p>
+                </div>
             </div>
         </div>
     </div>
@@ -150,6 +190,11 @@
                 logo.style.height = "150px"; // Höhe des Logos zurücksetzen
             }
         };
+
+        // Funktion zum Umschalten der Fahrzeugliste
+        function toggleVehicles(box) {
+            box.classList.toggle("active");
+        }
     </script>
 </body>
 </html>
