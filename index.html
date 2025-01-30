@@ -8,14 +8,13 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh; /* Volle Höhe des Viewports */
+            min-height: 100vh; /* Mindesthöhe des Viewports */
             background-image: url('https://raw.githubusercontent.com/gordon7471/Race-RP-III/main/hintergrund.jpg');
             background-size: cover; /* Bild füllt den gesamten Hintergrund */
             background-position: center; /* Bild wird zentriert */
             background-repeat: no-repeat; /* Bild wird nicht wiederholt */
             background-attachment: fixed; /* Hintergrund bleibt statisch beim Scrollen */
             position: relative; /* Positionierung für den Overlay */
-            overflow: hidden; /* Verhindert Scrollen während des Überlagerungsabschnitts */
         }
 
         /* Banner oben */
@@ -43,7 +42,7 @@
             z-index: 1; /* Sicherstellen, dass die Überlagerung unter dem Banner, aber über dem Bild liegt */
         }
 
-       /* Textinhalt */
+        /* Textinhalt */
         .content {
             position: relative;
             z-index: 2; /* Sicherstellen, dass der Text über der Überlagerung liegt */
