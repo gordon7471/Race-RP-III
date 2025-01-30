@@ -75,7 +75,7 @@
             margin-top: 10px; /* Abstand zwischen Überschrift und Fahrzeugliste */
         }
 
-        .box.active .vehicle-list {
+        .active .vehicle-list {
             display: block; /* Sichtbar, wenn die Box aktiv ist */
         }
 
@@ -131,6 +131,7 @@
 
     <script>
         function toggleVehicles(box) {
+            // Klappen Sie nur die angeklickte Box ein oder aus
             box.classList.toggle("active");
         }
     </script>
