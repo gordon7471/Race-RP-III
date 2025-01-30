@@ -78,8 +78,16 @@
             align-items: center; /* Horizontale Zentrierung */
             justify-content: center; /* Vertikale Zentrierung */
             margin: 20px; /* Abstand zwischen den Boxen */
-            transition: background-color 0.3s ease; /* Weicher Übergang für Effekte */
+            transition: transform 0.3s ease, background 0.3s ease; /* Sanfte Übergänge */
             border-radius: 10px; /* Runder Rahmen */
+            overflow: hidden; /* Für den Verlaufseffekt */
+        }
+
+        /* Farbverlauf beim Hover */
+        .box:hover {
+            transform: translateY(-10px); /* Anheben der Box */
+            background: linear-gradient(135deg, pink, blue); /* Farbverlauf */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Schatten hinzufügen */
         }
 
         .box-icon {
@@ -94,11 +102,6 @@
 
         .box-text {
             font-size: 18px; /* Größe des Textes */
-        }
-
-        /* Hover-Effekt für die Boxen */
-        .box:hover {
-            background-color: #666; /* Dunklerer Hintergrund beim Hover-Effekt */
         }
     </style>
 </head>
