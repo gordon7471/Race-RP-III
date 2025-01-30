@@ -77,7 +77,7 @@
         .box {
             width: 300px; /* Breite der Box */
             height: 250px; /* Höhe der Box */
-            background-color: rgba(0, 0, 0, 0.8); /* Schwarzer Hintergrund */
+            background-color: #ccc; /* Grauer Hintergrund */
             color: white; /* Textfarbe */
             display: flex; /* Flexbox für Textzentrierung */
             flex-direction: column; /* Anordnen des Inhalts in einer Spalte */
@@ -85,16 +85,19 @@
             justify-content: center; /* Vertikale Zentrierung */
             margin: 0 15px; /* Abstand zwischen den Boxen */
             transition: all 0.3s ease; /* Weicher Übergang für Effekte */
-            border-radius: 0px; /* Eckige Boxen */
+            border-radius: 10px; /* Runder Rahmen */
             position: relative; /* Positionierung für den Farbübergang */
-            padding-top: 30px; /* Abstand für den Überschrift */
+            padding-top: 50px; /* Abstand für das Icon und die Überschrift */
         }
 
-        /* Überschrift in den Boxen */
+        .box-icon {
+            font-size: 40px; /* Größe des Icons */
+            margin-bottom: 10px; /* Abstand zwischen Icon und Überschrift */
+        }
+
         .box-header {
             font-size: 24px; /* Größe der Überschrift */
             font-weight: bold; /* Fett schreiben */
-            margin-bottom: 10px; /* Abstand zwischen Überschrift und Text */
         }
 
         .box-text {
@@ -124,14 +127,17 @@
         <!-- Boxen hinzufügen -->
         <div class="box-container">
             <div class="box">
+                <div class="box-icon"><i class="material-icons">directions_car</i></div>
                 <div class="box-header">Gute Performance</div>
                 <p class="box-text">Mit unseren Fahrzeugen kannst du deine Fahrtgeschwindigkeit steigern und einzigartige Rennwagen ausprobieren.</p>
             </div>
             <div class="box">
+                <div class="box-icon"><i class="material-icons">attach_money</i></div>
                 <div class="box-header">Kein Echtgeld</div>
                 <p class="box-text">In unserer Community musst du keine Echtgeld ausgeben, um an Spielen teilzunehmen. Unsere Spiele sind komplett kostenlos.</p>
             </div>
             <div class="box">
+                <div class="box-icon"><i class="material-icons">build</i></div>
                 <div class="box-header">Custom Scripts</div>
                 <p class="box-text">Wir bieten eine Vielzahl von Custom Scripts an, um deine Erfahrung noch interessanter zu machen. Ob es um Fahrtroutine, Fahrzeuganpassung oder noch mehr geht, das ist bei uns alles möglich.</p>
             </div>
