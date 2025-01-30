@@ -83,12 +83,13 @@
             justify-content: center; /* Horizontale Zentrierung */
             margin: 0 15px; /* Abstand zwischen den Boxen */
             transition: all 0.3s ease; /* Weicher Übergang für Effekte */
-            border-radius: 10px; /* Abgerundete Ecken */
+            border-radius: 0px; /* Eckige Boxen */
+            position: relative; /* Pozitionierung für den Farbübergang */
         }
 
         /* Hover-Effekt für die Boxen */
         .box:hover {
-            background-color: rgba(100, 149, 237, 0.8); /* Weicher Blauton beim Hover */
+            background: linear-gradient(to left, #FF7F50, #87CEEB); /* Farbverlauf von sanftem Pink zu sanftem Blau */
             transform: translateY(-5px); /* Leichtes Anheben der Box */
         }
     </style>
