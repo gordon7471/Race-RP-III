@@ -37,13 +37,19 @@
             text-align: center;
         }
 
-        .logo {
-            height: 40px; /* Höhe des kleinen Logos */
-            margin-right: 10px; /* Abstand zwischen Logo und Button */
+        .banner-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .banner-logo {
+            height: 80px; /* Großeres Logo */
+            margin-right: 20px; /* Abstand zwischen Logo und Button */
         }
 
         .box {
-            width: 300px;
+            width: calc(300px + 20px); /* Breite der Boxen plus Paddings */
             background-color: #222;
             color: white;
             margin: 20px;
@@ -51,6 +57,8 @@
             border-radius: 0;
             padding: 10px;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
             transition: transform 0.3s ease, background 0.3s ease; /* Übergang für Animationen */
         }
 
@@ -62,18 +70,14 @@
         }
 
         .vehicle-list {
-            display: none; /* Standardmäßig ausgeblendet */
-        }
-
-        .box.active .vehicle-list {
-            display: block; /* Sichtbar, wenn die Box aktiv ist */
+            text-align: center; /* Text im Mittelpunkt */
         }
     </style>
 </head>
 <body>
     <div class="banner">
-        <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Kleines Logo" class="logo">
-        <a href="index.html" class="btn">Zurück zur Startseite</a>
+        <a href="index.html" class="btn">Zurück zum Startseite</a>
+        <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Großes Logo" class="banner-logo">
     </div>
     <div class="content">
         <h1>Fahrzeugbibliothek</h1>
