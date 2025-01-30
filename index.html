@@ -15,7 +15,7 @@
             background-position: center; /* Bild wird zentriert */
             background-repeat: no-repeat; /* Bild wird nicht wiederholt */
             background-attachment: fixed; /* Hintergrund bleibt statisch beim Scrollen */
-            position: relative; /* Positionierung für den Overlay */
+            position: relative; /* Position für den Overlay */
         }
 
         /* Banner oben */
@@ -25,11 +25,12 @@
             display: flex; /* Flexbox für einfache Ausrichtung */
             align-items: center; /* Vertikale Zentrierung */
             padding: 0 20px; /* Padding für Abstand an den Seiten */
-            position: absolute; /* Absolut positioniert */
+            position: fixed; /* Fixiert die Position des Banners */
             top: 0; /* Oben anordnen */
             left: 0; /* Links anordnen */
             width: 100%; /* Breite 100% des Viewports */
             z-index: 3; /* Sicherstellen, dass der Banner über dem Bild liegt */
+            transition: height 0.3s, padding 0.3s; /* Übergang für Größe und Padding */
         }
 
         /* Überlagerung */
@@ -49,7 +50,7 @@
             z-index: 2; /* Sicherstellen, dass der Text über der Überlagerung liegt */
             color: white; /* Textfarbe */
             text-align: center; /* Zentrierter Text */
-            padding-top: 10%; /* Erhöhtes Padding oben, um den Text weiter nach unten zu schieben */
+            padding-top: 70px; /* Erhöhtes Padding oben, um den Text weiter nach unten zu schieben */
         }
 
         /* Logo im Banner */
@@ -57,6 +58,7 @@
             height: 150px; /* Höhe des Logos im Banner */
             width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
             margin-left: 600px; /* Abstand zwischen dem Logo und dem linken Rand des Banners */
+            transition: height 0.3s; /* Übergang für die Größe des Logos */
         }
 
         /* Großes Logo über dem Text */
@@ -77,7 +79,7 @@
         .box {
             width: 300px; /* Breite der Box */
             height: 250px; /* Höhe der Box */
-            background-color: #ccc; /* Grauer Hintergrund */
+            background-color: #666; /* Dunkler grauer Hintergrund */
             color: white; /* Textfarbe */
             display: flex; /* Flexbox für Textzentrierung */
             flex-direction: column; /* Anordnen des Inhalts in einer Spalte */
@@ -108,6 +110,21 @@
         .box:hover {
             background: linear-gradient(to left, #eb10eb, #05b3fa); /* Farbverlauf von sanftem Pink zu sanftem Blau */
             transform: translateY(-5px); /* Leichtes Anheben der Box */
+        }
+
+        /* Verkleinerung des Logos beim Scrollen */
+        @keyframes shrink {
+            0% {
+                height: 150px;
+            }
+            100% {
+                height: 100px; /* Höhe des Logos beim Scrollen */
+            }
+        }
+
+        /* Logo beim Scrollen verkleinern */
+        .banner.scrolled .logo {
+            animation: shrink 0.3s forwards; /* Animation anwenden */
         }
     </style>
 </head>
@@ -143,5 +160,17 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Skript zum Hinzufügen der "scrolled" Klasse zum Banner beim Scrollen
+        window.onscroll = function() {
+            const banner = document.querySelector('.banner');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                banner.classList.add("scrolled");
+            } else {
+                banner.classList.remove("scrolled");
+            }
+        };
+    </script>
 </body>
 </html>
