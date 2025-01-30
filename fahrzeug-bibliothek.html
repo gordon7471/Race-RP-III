@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrzeugbibliothek</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/gordon7471/Race-RP-III/main/hintergrund.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .banner {
+            background-color: black;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .content {
+            position: relative;
+            padding-top: 70px; /* Erhöhtes Padding oben für Banner */
+            text-align: center;
+        }
+
+        .box {
+            width: 300px;
+            background-color: #222;
+            color: white;
+            margin: 20px;
+            border: 2px solid #444;
+            border-radius: 0;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .vehicle-list {
+            display: none; /* Standardmäßig ausgeblendet */
+        }
+
+        .box.active .vehicle-list {
+            display: block; /* Sichtbar, wenn die Box aktiv ist */
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <a href="index.html" class="btn">Zurück zur Startseite</a>
+    </div>
+    <div class="content">
+        <h1>Fahrzeugbibliothek</h1>
+
+        <div class="box" onclick="toggleVehicles(this)">
+            <div class="box-header">Sportautos</div>
+            <div class="vehicle-list">
+                <p>Auto 1</p>
+                <p>Auto 2</p>
+                <p>Auto 3</p>
+            </div>
+        </div>
+
+        <div class="box" onclick="toggleVehicles(this)">
+            <div class="box-header">Supersportwagen</div>
+            <div class="vehicle-list">
+                <p>Auto 4</p>
+                <p>Auto 5</p>
+                <p>Auto 6</p>
+            </div>
+        </div>
+
+        <div class="box" onclick="toggleVehicles(this)">
+            <div class="box-header">Lkw</div>
+            <div class="vehicle-list">
+                <p>Auto 7</p>
+                <p>Auto 8</p>
+                <p>Auto 9</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleVehicles(box) {
+            box.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
