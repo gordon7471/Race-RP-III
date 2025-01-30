@@ -9,123 +9,99 @@
         body {
             margin: 0;
             padding: 0;
-            min-height: 100vh; /* Mindesthöhe des Viewports */
+            min-height: 100vh;
             background-image: url('https://raw.githubusercontent.com/gordon7471/Race-RP-III/main/hintergrund.jpg');
-            background-size: cover; /* Bild füllt den gesamten Hintergrund */
-            background-position: center; /* Bild wird zentriert */
-            background-repeat: no-repeat; /* Bild wird nicht wiederholt */
-            background-attachment: fixed; /* Hintergrund bleibt statisch beim Scrollen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
-        /* Banner oben */
         .banner {
-            background-color: black; /* Schwarzer Hintergrund */
-            height: 60px; /* Höhe des Banners */
-            display: flex; /* Flexbox für einfache Ausrichtung */
-            align-items: center; /* Vertikale Zentrierung */
-            padding: 0 20px; /* Padding für Abstand an den Seiten */
-            position: fixed; /* Fixiert die Position des Banners */
-            top: 0; /* Oben anordnen */
-            left: 0; /* Links anordnen */
-            width: 100%; /* Breite 100% des Viewports */
-            z-index: 3; /* Sicherstellen, dass der Banner über dem Bild liegt */
-            transition: height 0.3s; /* Übergang für Größe */
-        }
-
-        /* Überlagerung */
-        .overlay {
-            position: fixed; /* Fixierte Position für Overlay */
+            background-color: black;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh; /* Höhe an den Viewport anpassen */
-            background-color: rgba(0, 0, 0, 0.5); /* Schwarz mit 50% Transparenz */
-            z-index: 1; /* Sicherstellen, dass die Überlagerung unter dem Banner, aber über dem Bild liegt */
+            z-index: 3;
+            transition: height 0.3s;
         }
 
-        /* Textinhalt */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
         .content {
             position: relative;
-            z-index: 2; /* Sicherstellen, dass der Text über der Überlagerung liegt */
-            color: white; /* Textfarbe */
-            text-align: center; /* Zentrierter Text */
-            padding-top: 70px; /* Erhöhtes Padding oben, um den Text weiter nach unten zu schieben */
-            padding-bottom: 50px; /* Abstand für das Scrollen */
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding-top: 70px;
+            padding-bottom: 50px;
         }
 
-        /* Großes Logo über dem Text */
         .large-logo {
-            height: 300px; /* Höhe des großen Logos */
-            width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
-            margin-bottom: 20px; /* Abstand zwischen dem Logo und dem Text */
+            height: 300px;
+            width: auto;
+            margin-bottom: 20px;
         }
 
-        /* Boxen Container */
         .box-container {
             display: flex;
-            justify-content: center; /* Zentriert die Boxen horizontal */
-            flex-wrap: wrap; /* Erlaubt das Wrapping */
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* Boxen */
         .box {
-            width: 300px; /* Breite der Box */
-            background-color: #222; /* Dunklerer Hintergrund */
-            color: white; /* Textfarbe */
-            display: flex; /* Flexbox für Textzentrierung */
-            flex-direction: column; /* Anordnen des Inhalts in einer Spalte */
-            align-items: center; /* Horizontale Zentrierung */
-            justify-content: center; /* Vertikale Zentrierung */
-            margin: 20px; /* Abstand zwischen den Boxen */
-            transition: transform 0.3s ease; /* Sanfter Übergang */
-            border: 2px solid #444; /* Eckigen Rand */
-            border-radius: 0; /* Keine abgerundeten Ecken */
-            overflow: hidden; /* Für den Verlaufseffekt */
-            padding: 10px; /* Innerer Abstand */
-        }
-
-        /* Hover-Effekt für Boxen */
-        .box:hover {
-            transform: translateY(-10px); /* Anheben der Box */
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Schatten hinzufügen */
+            width: 300px;
+            background-color: #222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            border: 2px solid #444;
+            border-radius: 0;
+            padding: 10px;
         }
 
         .box-icon {
-            font-size: 40px; /* Größe des Icons */
-            margin-bottom: 10px; /* Abstand zwischen Icon und Überschrift */
+            font-size: 40px;
+            margin-bottom: 10px;
         }
 
         .box-header {
-            font-size: 24px; /* Größe der Überschrift */
-            font-weight: bold; /* Fett schreiben */
+            font-size: 24px;
+            font-weight: bold;
         }
 
         .box-text {
-            font-size: 18px; /* Größe des Textes */
+            font-size: 18px;
         }
 
-        /* Button für Fahrzeugbibliothek */
         .btn {
-            background-color: #444; /* Hintergrundfarbe des Buttons */
-            color: white; /* Textfarbe */
-            padding: 10px 20px; /* Innerer Abstand */
-            border-radius: 5px; /* Abgerundete Ecken */
-            text-decoration: none; /* Unterstreichen entfernen */
-            margin-left: 20px; /* Abstand vom Logo */
-            transition: background-color 0.3s; /* Sanfter Übergang */
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: background-color 0.3s;
         }
 
         .btn:hover {
-            background-color: #666; /* Hintergrundfarbe beim Hover */
-        }
-
-        /* Fahrzeugkategorie-Boxen */
-        .vehicle-list {
-            display: none; /* Standardmäßig ausgeblendet */
-        }
-
-        .box.active .vehicle-list {
-            display: block; /* Sichtbar, wenn die Box aktiv ist */
+            background-color: #666;
         }
     </style>
 </head>
@@ -142,59 +118,24 @@
         <h1>JETZT TEIL DER ROLEPLAY COMMUNITY VON RACE RP WERDEN</h1>
         <p>COMMING SOON</p>
 
-        <!-- Boxen hinzufügen -->
+        <!-- Boxen hinzufügen (keine Interaktionen mehr) -->
         <div class="box-container">
-            <div class="box" onclick="toggleVehicles(this)">
+            <div class="box">
                 <div class="box-icon"><i class="material-icons">directions_car</i></div>
                 <div class="box-header">Gute Performance</div>
                 <p class="box-text">Mit unseren Fahrzeugen kannst du deine Fahrtgeschwindigkeit steigern und einzigartige Rennwagen ausprobieren.</p>
-                <div class="vehicle-list">
-                    <p>Fahrzeug 1</p>
-                    <p>Fahrzeug 2</p>
-                    <p>Fahrzeug 3</p>
-                </div>
             </div>
-            <div class="box" onclick="toggleVehicles(this)">
+            <div class="box">
                 <div class="box-icon"><i class="material-icons">attach_money</i></div>
                 <div class="box-header">Kein Echtgeld</div>
                 <p class="box-text">In unserer Community musst du keine Echtgeld ausgeben, um an Spielen teilzunehmen. Unsere Spiele sind komplett kostenlos.</p>
-                <div class="vehicle-list">
-                    <p>Fahrzeug 4</p>
-                    <p>Fahrzeug 5</p>
-                    <p>Fahrzeug 6</p>
-                </div>
             </div>
-            <div class="box" onclick="toggleVehicles(this)">
+            <div class="box">
                 <div class="box-icon"><i class="material-icons">build</i></div>
                 <div class="box-header">Custom Scripts</div>
                 <p class="box-text">Wir bieten eine Vielzahl von Custom Scripts an, um deine Erfahrung noch interessanter zu machen. Ob es um Fahrtroutine, Fahrzeuganpassung oder noch mehr geht, das ist bei uns alles möglich.</p>
-                <div class="vehicle-list">
-                    <p>Fahrzeug 7</p>
-                    <p>Fahrzeug 8</p>
-                    <p>Fahrzeug 9</p>
-                </div>
             </div>
         </div>
     </div>
-
-    <script>
-        // Skript zum Hinzufügen der "scrolled" Klasse zum Banner beim Scrollen
-        window.onscroll = function() {
-            const logo = document.querySelector('.logo');
-            const banner = document.querySelector('.banner');
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                banner.style.height = "40px"; // Höhe des Banners beim Scrollen anpassen
-                logo.style.height = "100px"; // Höhe des Logos beim Scrollen anpassen
-            } else {
-                banner.style.height = "60px"; // Höhe des Banners zurücksetzen
-                logo.style.height = "150px"; // Höhe des Logos zurücksetzen
-            }
-        };
-
-        // Funktion zum Umschalten der Fahrzeugliste
-        function toggleVehicles(box) {
-            box.classList.toggle("active");
-        }
-    </script>
 </body>
 </html>
