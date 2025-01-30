@@ -37,13 +37,6 @@
             text-align: center;
         }
 
-        .banner-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-left: auto; /* Positioniert das Banner-Logo */
-        }
-
         .banner-logo {
             height: 80px; /* Großeres Logo */
             margin-left: 20px; /* Abstand zwischen Button und Logo */
@@ -132,7 +125,9 @@
     <script>
         function toggleVehicles(box) {
             // Klappen Sie nur die angeklickte Box ein oder aus
-            box.classList.toggle("active");
+            const vehicleList = box.querySelector('.vehicle-list');
+            const isVisible = vehicleList.style.display === 'block'; // Überprüfen, ob die Liste sichtbar ist
+            vehicleList.style.display = isVisible ? 'none' : 'block'; // Umschalten der Sichtbarkeit 
         }
     </script>
 </body>
