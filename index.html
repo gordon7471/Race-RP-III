@@ -15,8 +15,6 @@
             background-position: center; /* Bild wird zentriert */
             background-repeat: no-repeat; /* Bild wird nicht wiederholt */
             background-attachment: fixed; /* Hintergrund bleibt statisch beim Scrollen */
-            position: relative;
-            overflow: auto; /* Scrollen aktivieren */
         }
 
         /* Banner oben */
@@ -36,7 +34,7 @@
 
         /* Überlagerung */
         .overlay {
-            position: absolute;
+            position: fixed; /* Fixierte Position für Overlay */
             top: 0;
             left: 0;
             width: 100%;
@@ -52,12 +50,12 @@
             color: white; /* Textfarbe */
             text-align: center; /* Zentrierter Text */
             padding-top: 70px; /* Erhöhtes Padding oben, um den Text weiter nach unten zu schieben */
-            padding-bottom: 1000px; /* Fügt zusätzlichen Abstand unten hinzu für das Scrollen */
+            padding-bottom: 50px; /* Abstand für das Scrollen */
         }
 
         /* Großes Logo über dem Text */
         .large-logo {
-            height: 500px; /* Höhe des großen Logos */
+            height: 300px; /* Höhe des großen Logos */
             width: auto; /* Breite automatisch, um Verhältnisse beizubehalten */
             margin-bottom: 20px; /* Abstand zwischen dem Logo und dem Text */
         }
@@ -82,8 +80,6 @@
             margin: 20px; /* Abstand zwischen den Boxen */
             transition: background-color 0.3s ease; /* Weicher Übergang für Effekte */
             border-radius: 10px; /* Runder Rahmen */
-            position: relative; /* Positionierung für den Farbübergang */
-            padding-top: 20px; /* Abstand für das Icon und die Überschrift */
         }
 
         .box-icon {
@@ -102,17 +98,17 @@
 
         /* Hover-Effekt für die Boxen */
         .box:hover {
-            background-color: #555; /* Dunklerer Hintergrund beim Hover-Effekt */
+            background-color: #666; /* Dunklerer Hintergrund beim Hover-Effekt */
         }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="banner">
         <a href="https://github.com/gordon7471/Race-RP-III">
             <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Logo" class="logo" style="height: 150px;">
         </a>
     </div>
-    <div class="overlay"></div>
     <div class="content">
         <img src="https://github.com/gordon7471/Race-RP-III/blob/main/esxlogo.png?raw=true" alt="Großes Logo" class="large-logo">
         <h1>JETZT TEIL DER ROLEPLAY COMMUNITY VON RACE RP WERDEN</h1>
